@@ -1,27 +1,52 @@
 package com.live.blogvuespringboot.model.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.List;
+
 public class User {
-    private Integer id;
-    private String username;
+    private Long id;
+    private String name;
     private String password;
     private String phone;
     private String email;
     private Integer status;
 
-    public Integer getId() {
+    @JsonIgnore
+    private List<Role> roles;
+
+    private Login login;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
